@@ -1,0 +1,195 @@
+@import '../variables';
+@import '../mixins';
+@import '../global';
+
+//NAVBAR
+@import '../navbar';
+
+//MAIN
+.main {
+  background: transparent;
+
+  //BALANCE
+  &__balance {
+    margin-top: rem(-60);
+
+    @media screen and (min-width: 800px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(24);
+    }
+
+    h2 {
+      margin-bottom: rem(13);
+      font-weight: 400;
+      color: $White;
+    }
+
+    .card {
+      padding: rem(17) rem(22);
+      margin-bottom: rem(22);
+      border-radius: 9px;
+      color: $Dark;
+      background: $White;
+
+      h3 {
+        align-items: center;
+        justify-content: space-between;
+        font-size: rem(15);
+        font-weight: 400;
+      }
+
+      p {
+        margin-top: rem(12);
+        font-size: rem(23);
+        line-height: rem(33);
+      }
+
+      &__total {
+        color: $White;
+        background: $LightGreen;
+      }
+    }
+  }
+
+  &__transaction {
+    display: block;
+    width: 100%;
+    margin-top: rem(40);
+    overflow: auto;
+
+    a {
+      text-decoration: none;
+      color: $DarkGreen;
+
+      &:hover {
+        color: $LightGreen;
+      }
+    }
+
+    .button.new {
+      display: inline-block;
+      margin-bottom: rem(10);
+    }
+
+    #data-table {
+      width: 100%;
+      border-spacing: 0 rem(4);
+      color: $Gray;
+
+      tr {
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      th {
+        text-align: left;
+        padding: rem(15) rem(20);
+        font-weight: 400;
+        opacity: 1;
+        background: $White;
+
+        &:first-child {
+          border-radius: 9px 0 0 9px;
+        }
+
+        &:last-child {
+          border-radius: 0 9px 9px 0;
+        }
+      }
+
+      td {
+        padding: rem(15) rem(30);
+        font-weight: 400;
+        background: $White;
+
+        &:first-child {
+          border-radius: 9px 0 0 9px;
+        }
+
+        &:last-child {
+          border-radius: 0 9px 9px 0;
+        }
+      }
+
+      .description {
+        color: $Dark;
+      }
+
+      .income {
+        color: $LightGreen;
+      }
+
+      .expense {
+        color: $Red;
+      }
+    }
+  }
+}
+
+.modal-overlay {
+  place-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease-in;
+
+  .modal {
+    position: relative;
+    width: 90%;
+    padding: rem(22);
+    margin: auto;
+    background: $Grayish;
+
+    &__content {
+      #form {
+        max-width: 500px;
+
+        h2 {
+          margin: 0;
+        }
+
+        .input-group {
+          margin-top: rem(13);
+
+          input {
+            width: 100%;
+            padding: rem(13);
+            border: none;
+            border-radius: 5px;
+          }
+
+          small {
+            opacity: 0.4;
+          }
+        }
+
+        .actions {
+          align-items: center;
+          justify-content: space-between;
+
+          button,
+          .button {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-out;
+}
+
+//FOOTER
+@import '../footer';

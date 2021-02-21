@@ -1,0 +1,10 @@
+.header {
+  text-align: center;
+  padding: 2rem 0 10rem;
+  background-color: $DarkGreen;
+
+  &__logo {
+    font-weight: 100;
+    color: $White;
+  }
+}

@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $Grayish;
+}
+
+.container {
+  width: #{'min(90vw, 800px)'};
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+#sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  color: $White;
+  background: $LightGreen;
+  transition: background 0.3s ease-in;
+
+  &:hover {
+    background: $VeryLightGreen;
+    transition: background 0.3s ease-out;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  text-decoration: none;
+  border: 2px $Red solid;
+  border-radius: 9px;
+  opacity: 0.6;
+  color: $Red;
+  transition: opacity 0.3s ease-in;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+}

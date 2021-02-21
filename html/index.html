@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+  <head>
+    <!--TITLE-->
+    <title>dev.finance$</title>
+
+    <!--META-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--LINK-->
+    <link rel="stylesheet" href="../style/index/index.css" />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <header class="header">
+      <img src="../assets/logo.svg" alt="logo dev finance" />
+    </header>
+
+    <!--MAIN-->
+    <main class="main">
+      <div class="container">
+        <!--BALANCE-->
+        <section class="main__balance">
+          <h2 id="sr-only">Balance</h2>
+          <div class="card">
+            <h3 class="flex">
+              <span>Income</span>
+              <img src="../assets/income.svg" alt="income icon" />
+            </h3>
+            <p id="incomeDisplay">R$ 000,00</p>
+          </div>
+          <div class="card">
+            <h3 class="flex">
+              <span>Expense</span>
+              <img src="../assets/expense.svg" alt="expense icon" />
+            </h3>
+            <p id="expenseDisplay">R$ 000,00</p>
+          </div>
+          <div class="card card__total">
+            <h3 class="flex">
+              <span>Total</span>
+              <img src="../assets/total.svg" alt="total icon" />
+            </h3>
+            <p id="totalDisplay">R $000,00</p>
+          </div>
+        </section>
+
+        <!--TRANSACTION-->
+        <section class="main__transaction">
+          <h2 id="sr-only">Transactions</h2>
+          <a class="button-new" onclick="Modal.toggle()" href="#">+ New Transaction</a>
+          <table id="data-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-overlay grid">
+      <div class="modal">
+        <div class="modal__content">
+          <div id="form">
+            <h2>New Transaction</h2>
+            <form action="" onsubmit="Form.submit(event)" method="GET">
+              <div class="input-group">
+                <label class="sr-only" for=""></label>
+                <input type="text" id="input-description" name="description" placeholder="Description" />
+              </div>
+              <div class="input-group">
+                <label class="sr-only" for=""></label>
+                <input type="number" id="input-amount" name="amount" placeholder="0,00" step="0.01" />
+                <small class="help">Lorem ipsum dolor sit amet, conentium. In, quibusdam provident! Beatae voluptati</small>
+              </div>
+              <div class="input-group">
+                <label class="sr-only" for=""></label>
+                <input type="date" id="input-date" name="date" />
+              </div>
+              <div class="input-group actions flex">
+                <a class="button cancel" href="#" onclick="Modal.toggle()">Cancel</a>
+                <button type="submit">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+      <p>dev.finance</p>
+    </footer>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <script src="../js/app.js" async defer></script>
+  </body>
+</html>
